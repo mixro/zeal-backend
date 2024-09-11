@@ -1,6 +1,6 @@
 import express from "express";
-import { verifyTokenAndAdmin } from "../zeal-backend/routes/verifyToken.js";
 import Service from "../models/service.model.js";
+import { verifyTokenAndAdmin } from "./verifyToken.js";
 
 const router = express.Router();
 
