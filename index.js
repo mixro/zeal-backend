@@ -8,6 +8,7 @@ import { createServer } from "http";
 import userRoute from "./routes/User.js";
 import authRoute from "./routes/Auth.js";
 import productRoute from "./routes/Product.js";
+import serviceRoute from "./routes/Service.js";
 import orderRoute from "./routes/Order.js";
 import cartRoute from "./routes/Cart.js";
 
@@ -42,9 +43,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 //routes
 app.use("/api/auth", authRoute);
-app.use("/api/user", userRoute);
-app.use("/api/product", productRoute);
-app.use("/api/order", orderRoute);
+app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
+app.use("/api/services", serviceRoute);
+app.use("/api/orders", orderRoute);
 app.use("/api/cart", cartRoute);
 
 //port section
