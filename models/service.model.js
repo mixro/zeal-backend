@@ -11,9 +11,15 @@ const serviceSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        image: {
+        img: {
             type: String,
             required: true,
+        },
+        technicians: {
+            type: Number,
+        },
+        price: {
+            type: Number,
         }
     },
     { timestamps: true }
