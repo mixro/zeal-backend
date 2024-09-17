@@ -1,6 +1,6 @@
 import express from "express";
 import Order from "../models/order.model.js";
-import { verifyToken, verifyTokenAndAdmin, verifyTokenAndAuthorization } from "./verifyToken.js";
+import { verifyToken, verifyTokenAndAdmin, verifyTokenAndAuthorization, verifyUserToken } from "./verifyToken.js";
 
 const router = express.Router();
 
@@ -45,7 +45,7 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
 });
 
 //GET INDIVIDUAL ORDER
-router.get("/find/:userId", verifyTokenAndAuthorization, async( req, res) => {
+router.get("/find/:userId", verifyUserToken, async( req, res) => {
     try {
         const orders = await Order.find({ userId: req.params.userId });
         res.status(200).json(orders);
